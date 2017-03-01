@@ -57,7 +57,7 @@
             <fileset dir="C:/Users/lnastro/Desktop/RemoteRepo_Git/Calendario/reports">
                 <include name="TEST_1-*.xml"/>
             </fileset>
-            <report todir=""C:/Users/lnastro/Desktop/RemoteRepo_Git/Calendario/reports"/html"/>
+            <report todir="C:/Users/lnastro/Desktop/RemoteRepo_Git/Calendario/reports/html"/>
         </junitreport>
     </target>
 
