@@ -35,7 +35,10 @@
    </target>
 	
    <target name = "test" depends = "compile">
-      <junit printsummary="on" haltonfailure="yes" fork="true">
+   <junit printsummary="true" haltonfailure="false">
+  <formatter type="xml" usefile="true"/>
+
+      <!--<junit printsummary="on" haltonfailure="yes" fork="true"> -->
          <classpath>
           <path refid="classpath.test"/>
           <pathelement location="bin"/>
@@ -43,6 +46,16 @@
          <formatter type = "brief" usefile = "false" />
          <test name = "calendario.TestWhiteBox" />
       </junit>
+	   
    </target>
-	
+
+	<target name="test-reports" depends="test">
+    <junitreport tofile="TESTS-TestSuites.xml" todir="${testdir}/reports">
+       
+        <report format="frames" todir="${testdir}/reports" />
+    </junitreport>
+   </target>
+
+
+   
 </project>
