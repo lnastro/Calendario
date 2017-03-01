@@ -1,6 +1,7 @@
 <project name = "JunitTest" default = "test" basedir = ".">
    <property name = "bindir" location = "bin" />
    <property name = "testdir" location = "bin/calendario" />
+    <property name = "resultdir" location = "reports" />
    <property name = "srcdir" location = "src" />
    <property name = "full-compile" value = "true" />
 	
@@ -36,26 +37,19 @@
 	
    <target name = "test" depends = "compile">
    <junit printsummary="true" haltonfailure="false">
-  <formatter type="xml" usefile="true"/>
-
-      <!--<junit printsummary="on" haltonfailure="yes" fork="true"> -->
+   
+    <formatter type="plain" usefile="true"/>
+    <formatter type="xml"/>
+  
          <classpath>
           <path refid="classpath.test"/>
           <pathelement location="bin"/>
         </classpath>
          <formatter type = "brief" usefile = "false" />
          <test name = "calendario.TestWhiteBox" />
-      </junit>
-	   
-   </target>
+      </junit>   
+     </target>
 
-	<target name="test-reports" depends="test">
-    <junitreport tofile="TESTS-TestSuites.xml" todir="${testdir}/reports">
-       
-        <report format="frames" todir="${testdir}/reports" />
-    </junitreport>
-   </target>
-
-
+   
    
 </project>
