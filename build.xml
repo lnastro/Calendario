@@ -40,16 +40,30 @@
    
     <formatter type="plain" usefile="true"/>
     <formatter type="xml"/>
-  
+  <!-- <formatter type="xml" usefile="true"/>-->
+
          <classpath>
           <path refid="classpath.test"/>
           <pathelement location="bin"/>
         </classpath>
          <formatter type = "brief" usefile = "false" />
          <test name = "calendario.TestWhiteBox" />
-      </junit>   
-     </target>
+      </junit>
+	   
+   </target>
 
-   
+
+   <target name="report" depends="test">
+        <mkdir dir="${resultdir}/html"/>
+        <junitreport todir="${resultdir}">
+            <fileset dir="${resultdir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report todir="${resultdir}/html"/>
+        </junitreport>
+    </target>
+
+
+
    
 </project>
