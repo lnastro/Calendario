@@ -40,8 +40,6 @@
    
     <formatter type="plain" usefile="true"/>
     <formatter type="xml"/>
-  <!-- <formatter type="xml" usefile="true"/>-->
-
          <classpath>
           <path refid="classpath.test"/>
           <pathelement location="bin"/>
@@ -54,12 +52,12 @@
 
 
    <target name="report" depends="test">
-        <mkdir dir="${resultdir}/html"/>
-        <junitreport todir="${resultdir}">
-            <fileset dir="${resultdir}">
-                <include name="TEST-*.xml"/>
+        <!--<mkdir dir="${resultdir}/html"/>-->
+        <junitreport todir="C:/Users/lnastro/Desktop/RemoteRepo_Git/Calendario/reports">
+            <fileset dir="C:/Users/lnastro/Desktop/RemoteRepo_Git/Calendario/reports">
+                <include name="TEST_1-*.xml"/>
             </fileset>
-            <report todir="${resultdir}/html"/>
+            <report todir=""C:/Users/lnastro/Desktop/RemoteRepo_Git/Calendario/reports"/html"/>
         </junitreport>
     </target>
 
