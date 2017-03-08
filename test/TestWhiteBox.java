@@ -1,12 +1,13 @@
 /**
  * 
  */
-package calendario;
-
 
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import calendario.Calendario;
+
 
 /**
  * @author Porfirio
